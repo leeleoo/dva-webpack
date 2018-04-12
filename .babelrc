@@ -1,10 +1,19 @@
 {
-  "presets": [
-    "env",
-    "react"
-  ],
   "plugins": [
-    "syntax-dynamic-import",
-    "transform-runtime"
+    "@babel/transform-runtime",
+    "@babel/syntax-dynamic-import"
+  ],
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "targets": {
+          "node": "current"
+        },
+        "shippedProposals": true
+      }
+    ],
+    "@babel/preset-flow",
+    "@babel/react"
   ]
 }
