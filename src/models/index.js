@@ -1,6 +1,6 @@
 import modelExtend from 'dva-model-extend'
 import { request } from '../utils'
-import baseModal from './model-base'
+import baseModal from './base-model'
 
 export default modelExtend(baseModal, {
   namespace    : 'app',

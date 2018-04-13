@@ -16,10 +16,11 @@ const app = dva({
 })
 
 // 2. Model
-app.model(require('./models/index'))
+//console.log(require('./models/index'))
+app.model(require('./models/index').default)
 
 // 3. Router
-app.router(require('./Router'))
+app.router(require('./Router').default)
 
 // 4. Start
 app.start('#root')

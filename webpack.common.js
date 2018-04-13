@@ -1,11 +1,16 @@
 const path               = require('path')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin  = require('html-webpack-plugin')
 const webpack            = require('webpack')
 module.exports           = {
   entry  : {
     polyfills: './src/polyfill.js',
     app      : './src/index.js'
+  },
+  resolve: {
+    alias: {
+      utils     : path.resolve(__dirname, 'src/utils'),
+      components: path.resolve(__dirname, 'src/components')
+    }
   },
   module : {
     rules: [
@@ -26,13 +31,13 @@ module.exports           = {
           }
         ]
       },
+
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'Production',
-      template:'./index.html'
+      title   : 'Production',
+      template: './index.html'
     }),
     new webpack.ProvidePlugin({
       _: ['lodash', 'join']

@@ -1,0 +1,20 @@
+@shadow-color: rgba(0, 0, 0, .2);
+@box-shadow-base: @shadow-1-down;
+@shadow-1-up: 0 -1px 6px @shadow-color;
+@shadow-1-down: 0 1px 6px @shadow-color;
+@shadow-1-left: -1px 0 6px @shadow-color;
+@shadow-1-right: 1px 0 6px @shadow-color;
+@shadow-2: 0 2px 8px @shadow-color;
+.contentInner {
+  background: #fff;
+  padding: 24px;
+  box-shadow: @shadow-2;
+  min-height: e("calc(100vh - 184px)");
+}
+
+@media (max-width: 767px) {
+  .contentInner {
+    padding: 12px;
+    min-height: e("calc(100vh - 160px)");
+  }
+}
