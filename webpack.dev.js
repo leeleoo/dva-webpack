@@ -1,11 +1,11 @@
 const merge    = require('webpack-merge')
 const common   = require('./webpack.common.js')
 const webpack  = require('webpack')
+process.
 module.exports = merge(common, {
   mode     : 'development',
   devtool  : 'source-map',
   module   : {
-    
     rules: [
       {
         test: /\.less$/,
@@ -15,7 +15,7 @@ module.exports = merge(common, {
           }, {
             loader : 'css-loader',// translates CSS into CommonJS
             options: {
-              modules: true,
+              modules       : true,
               localIdentName: '[name]__[local]'
             }
           }, {
@@ -33,7 +33,8 @@ module.exports = merge(common, {
     historyApiFallback: true,
     host              : 'localhost',
     port              : '8080'
-    
   },
-  plugins  : [new webpack.HotModuleReplacementPlugin()]
+  plugins  : [
+    new webpack.HotModuleReplacementPlugin()
+  ]
 })

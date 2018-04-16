@@ -1,6 +1,13 @@
 const path               = require('path')
 const HtmlWebpackPlugin  = require('html-webpack-plugin')
 const webpack            = require('webpack')
+const { NODE_ENV } = process
+const global = {}
+if(NODE_ENV === 'prod'){
+  global.__BASEURL__ = ''
+}else if(NODE_ENV === 'dev'){
+  global.__BASEURL__ = ''
+}
 module.exports           = {
   entry  : {
     polyfills: './src/polyfill.js',
@@ -39,9 +46,7 @@ module.exports           = {
       title   : 'Production',
       template: './index.html'
     }),
-    new webpack.ProvidePlugin({
-      _: ['lodash', 'join']
-    })
+    new webpack.ProvidePlugin(global)
   ],
   output : {
     filename: '[name].bundle.js',

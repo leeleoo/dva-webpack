@@ -43,8 +43,8 @@
     "whatwg-fetch": "^2.0.3"
   },
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "start": "export NODE_ENV=dev && webpack-dev-server --open --config webpack.dev.js",
+    "build": "export NODE_ENV=pro && webpack --config webpack.prod.js",
     "watch": "webpack --watch"
   },
   "keywords": [],
