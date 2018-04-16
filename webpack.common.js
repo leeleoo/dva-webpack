@@ -1,14 +1,14 @@
-const path               = require('path')
-const HtmlWebpackPlugin  = require('html-webpack-plugin')
-const webpack            = require('webpack')
-const { NODE_ENV } = process
-const global = {}
-if(NODE_ENV === 'prod'){
+const path              = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack           = require('webpack')
+const { NODE_ENV }      = process
+const global            = {}
+if (NODE_ENV === 'prod') {
   global.__BASEURL__ = ''
-}else if(NODE_ENV === 'dev'){
+} else if (NODE_ENV === 'dev') {
   global.__BASEURL__ = ''
 }
-module.exports           = {
+module.exports = {
   entry  : {
     polyfills: './src/polyfill.js',
     app      : './src/index.js'
@@ -37,8 +37,8 @@ module.exports           = {
             }
           }
         ]
-      },
-
+      }
+    
     ]
   },
   plugins: [
